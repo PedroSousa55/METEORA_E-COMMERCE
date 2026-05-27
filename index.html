@@ -8,11 +8,12 @@
     
     <link rel="stylesheet" href="style/style.css" />
     <link
-      rel="shortcut icon"
-      href="assets/Favicon-64px.png"
-      type="image/x-icon"
+    rel="shortcut icon"
+    href="assets/Favicon-64px.png"
+    type="image/x-icon"
     />
     <title>METEORA</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
   </head>
   <body>
     <header>
@@ -36,11 +37,20 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Nossas lojas</a>
+                <a class="nav-link" href="#">Lojas</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Novidades</a>
-              </li>
+              <li class="nav-item dropdown">
+          <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Novidades
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Coleção Verão</a></li>
+            <li><a class="dropdown-item" href="#">Coleção Inverno</a></li>
+            <li><a class="dropdown-item" href="#">Coleção Outono</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Em Alta</a></li>
+          </ul>
+        </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Promoções</a>
               </li>
@@ -53,9 +63,8 @@
           </div>
         </div>
       </nav>
-    </header>
 
-    <main>
+      
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -92,9 +101,8 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-    </main>
+  </div>
+    </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
