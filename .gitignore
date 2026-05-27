@@ -1,0 +1,6 @@
+mcp.json
+figma_*.json
+.qodo/
+node_modules/
+.DS_Store
+*.log
