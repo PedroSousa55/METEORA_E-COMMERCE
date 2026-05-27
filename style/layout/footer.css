@@ -1,43 +1,135 @@
-:root {
-  --color-branca: #e8e8e8;
-  --color-preta: #0000;
-  --color-cinza: #cccccc;
-  --color-verde: #daff01;
-  --color-roxo: #9353ff;
-}
-body{
-    margin: 0;
-}
-#footer_One{
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-}
-#img{
-    width: 40px;
-}
-.cards{
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-}
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-}
-footer{
-    max-width: 100%;
+ /* PARTE DO RESET, PODE TIRAR */
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.footer-yellow-font{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    color: var(--color-verde);
+/* Footer one */
+
+#footer_One {
+  background: black;
+  color: white;
+  padding: 40px 20px;
 }
 
-.textos_footer{
+.footer_header {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 280px;
+}
+
+#img {
+  width: 48px;
+}
+
+.footer-yellow-font {
+  color: #d9ff00;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.textos_footer p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #dcdcdc;
+}
+
+ /* SEGUNDO FOOTER   */
+
+#footer_Two {
+  background: #efefef;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#footer_Two > div {
+  border: 2px solid black;
+  padding: 30px;
+  width: 650px;
+  text-align: center;
+}
+
+#footer_Two h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+
+  /* INPUT DO EMAIL */
+#input_value_email {
+  width: 70%;
+  padding: 12px;
+  /* border-radius: 10px; Border-radius, nao necessario  */
+  border: 2px solid black;
+  font-size: 14px;
+  outline: none;
+}
+
+#input_button_send {
+  padding: 12px 22px;
+  /* border-radius: 10px; BORDA CIRCULAR, NÃO É NECESSARIO PORÉM, FICA MAIS BONITINHO A PARTIR DO 15PX */
+  border: none;
+  background: #9353ff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* FOOTER FINAL */
+
+#footer_Three {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 12px;
+}
+
+#footer_Three h3 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* RESPONSIVO, TALVEZ PRECISE DE ALTERAÇÕES*/
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #footer_Two > div {
+    width: 100%;
+  }
+
+  #input_value_email {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #input_button_send {
+    width: 100%;
+  }
 }
