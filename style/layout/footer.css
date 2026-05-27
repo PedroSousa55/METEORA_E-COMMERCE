@@ -1,0 +1,43 @@
+:root {
+  --color-branca: #e8e8e8;
+  --color-preta: #0000;
+  --color-cinza: #cccccc;
+  --color-verde: #daff01;
+  --color-roxo: #9353ff;
+}
+body{
+    margin: 0;
+}
+#footer_One{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+#img{
+    width: 40px;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+footer{
+    max-width: 100%;
+}
+
+.footer-yellow-font{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: var(--color-verde);
+}
+
+.textos_footer{
+}
