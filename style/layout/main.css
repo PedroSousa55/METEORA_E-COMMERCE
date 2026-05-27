@@ -26,3 +26,42 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.main-products {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.img-card {
+  object-fit: cover;
+}
+.card-body {
+  border: 1px solid red;
+}
+.card-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-align: left;
+  border: 1px solid green;
+}
+.card-text {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: left;
+  border: 1px solid black;
+}
+.card-price {
+  border: 1px solid blue;
+  text-align: left;
+  font-weight: 600;
+}
