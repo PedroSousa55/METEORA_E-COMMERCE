@@ -1,43 +1,221 @@
-:root {
-  --color-branca: #e8e8e8;
-  --color-preta: #0000;
-  --color-cinza: #cccccc;
-  --color-verde: #daff01;
-  --color-roxo: #9353ff;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    margin: 0;
+
+/* Footer one */
+
+#footer_One {
+  background: var(--color-preta);
+  color: var(--color-branca);
+  margin-top: 2.2rem;
+  padding: 2.5rem 1.25rem;
 }
-#footer_One{
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
+
+.footer_header {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  text-transform: none;
 }
-#img{
-    width: 40px;
+
+.cards-footer {
+  display: flex;
+  justify-content: center;
+  gap: 3.75rem;
+  flex-wrap: wrap;
 }
-.cards{
-    display: flex;
-    justify-content: center;
-    gap: 80px;
+
+.card-1, .card-2, .card-3 {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 22.2vw;
 }
-.card{
-    display: flex;
+
+.img-footer {
+  width: 3.8vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-yellow-font {
+  color: var(--color-verde);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.313rem;
+  text-transform: uppercase;
+}
+
+.textos_footer p {
+  font-size: 0.813rem;
+  line-height: 1.4;
+  color: var(--color-branca);
+}
+
+/* SEGUNDO FOOTER   */
+
+#footer_Two {
+  background: var(--color-branca);
+  padding: 3.125rem 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+#footer_Two > div {
+  border: 1px solid var(--color-preta);
+  padding: 1.875rem;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#footer_Two h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+
+#footer_Two form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+/* INPUT DO EMAIL */
+#input_value_email {
+  width: 70%;
+  padding: 0.75rem;
+  /* border-radius: 10px; Border-radius, nao necessario  */
+  border: 2px solid var(--color-preta);
+  font-size: 0.875rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#input_button_send {
+  padding: 0.75rem 1.375rem;
+  /* border-radius: 10px; BORDA CIRCULAR, NÃO É NECESSARIO PORÉM, FICA MAIS BONITINHO A PARTIR DO 15PX */
+  border: none;
+  background: var(--color-roxo);
+  color: var(--color-branca);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* FOOTER FINAL */
+
+#footer_Three {
+  background: var(--color-preta);
+  color: var(--color-branca);
+  text-align: center;
+  padding: 0.75rem;
+}
+
+#footer_Three h3 {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* RESPONSIVO,  ALTERADO*/
+
+@media (max-width: 900px) {
+  #footer_One {
+    padding: 2rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .cards-footer {
     flex-direction: column;
     align-items: center;
-    width: 40%;
-}
-footer{
+    gap: 1.5rem;
+  }
+
+  .card-1, .card-2, .card-3 {
     max-width: 100%;
+    width: 20rem;
+    gap: 1rem;
+  }
+
+  .img-footer {
+    width: 3.5rem;
+    flex-shrink: 0; /* Impede o texto de esmagar as imagens */
+  }
 }
 
-.footer-yellow-font{
-    display: flex;
-    align-items: center;
+@media (max-width: 768px) {
+  #footer_One {
+    padding: 1.8rem 0.8rem;
+  }
+
+  .card-1, .card-2, .card-3 {
+    max-width: 100%;
+    width: 18rem;
+  }
+
+  .footer-yellow-font {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .textos_footer p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  #footer_Two {
+    padding: 2rem 1rem;
+  }
+
+  #footer_Two > div {
+    padding: 1.2rem 1rem;
+  }
+
+  #footer_Two h3 {
+    font-size: 1.1rem; 
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Força campo e-mail e botão a agirem como bloco único e flexível */
+  #footer_Two form { 
+    display: flex !important;
+    width: 100%;
     justify-content: center;
-    margin: auto;
-    color: var(--color-verde);
-}
+    align-items: stretch; /* Iguala a altura do input e o botão */
+    margin: 0 auto;  
+    max-width: 100%;
+  }
 
-.textos_footer{
-}
+  #input_value_email {
+    flex: 1;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0.6rem;
+    border: 2px solid var(--color-preta);
+    border-right: none;
+    font-size: 0.7rem;
+    outline: none;
+  }
+
+  #input_button_send {
+    width: auto;
+    margin: 0 !important;
+    padding: 0.6rem 1.1rem;
+    background: var(--color-roxo);
+    color: var(--color-branca);
+    border: 2px solid var(--color-preta);
+    font-size: 0.7rem;
+    cursor: pointer;
+    flex-shrink: 0;/* Evita que botão esmague o texto interno*/
+  }
+
+  #footer_Three {
+    padding: 0.5rem;
+  }
+
+  #footer_Three h3 {
+    font-size: 0.65rem;
+  }
+}  

@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    margin-top: 2.2rem;
+}
+
+.main-category > .category-title {
+    display: flex;
+    justify-content: center;
+}
+
+.main-category .category__cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2.2rem;
+    gap: 1.7rem;
+}
+
+.main-category .card,
+.main-category .card-img-top {
+    border-radius: 0;
+}
+
+.main-category .card-body {
+    color: var(--color-branca);
+    background-color: var(--color-preta);
+    font-weight: 300;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.main-category .card-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 0 !important; /* !important força alterações mesmo que alterem predefinições bootstrap */
+    margin-bottom: 0 !important;
+}
+
+.main-products > .products-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.products__cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 18.2rem);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.products__cards-container .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+}
+
+.products__cards-container .card-body > .card-title {
+    text-align: justify;
+}
+
+/* Alteração do primeiro h5 com a pseudoclasse :first-of-type */
+.products__cards-container .card-body > .card-title:first-of-type {
+    margin-bottom: 1rem !important;
+}
+
+.products__cards-container .card-body > .card-text {
+    text-align: justify;
+    margin-bottom: 1.5rem !important;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Alteração do último h5 com a pseudoclasse :last-of-type */
+.products__cards-container .card-body > .card-title:last-of-type,
+.products__cards-container .card-body > p {
+    margin-top: auto;
+}
+
+.products__cards-container .card-body > a {
+    background-color: var(--color-roxo);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0 !important;
+    align-self: flex-start;
+}
+
+@media(max-width: 923px) {
+    .main-category .category__cards-container {
+        padding: 1rem !important;
+    }
+
+    .products__cards-container {
+        display: grid;
+        grid-template-columns: repeat(1, 18.2rem);
+    }
+
+    .main-products>.products-title {
+        text-align: center;
+    }
+
+    .products__cards-container .card-body>.card-text {
+        font-size: 0.9rem;
+    }
+}
