@@ -1,0 +1,96 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Customização do Header/Navbar */
+header .navbar {
+  background-color: var(--color-preta) !important;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand img {
+  height: 35px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-branca) !important;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-verde);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-verde) !important;
+}
+
+/* Estilo do Input de Busca */
+header form input[type="search"] {
+  background-color: transparent;
+  border: 1px solid var(--color-branca);
+  color: var(--color-branca);
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+header form input[type="search"]::placeholder {
+  color: var(--color-cinza);
+}
+
+header form input[type="search"]:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-verde);
+  box-shadow: none;
+  outline: none;
+  color: var(--color-branca);
+}
+
+/* Botão Buscar */
+header form .btn {
+  border: 1px solid var(--color-branca);
+  color: var(--color-branca);
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+header form .btn:hover {
+  background-color: var(--color-branca);
+  color: var(--color-preta);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  header .navbar {
+    padding: 1rem;
+  }
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+  }
+  header form {
+    margin-top: 15px;
+  }
+}

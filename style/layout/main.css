@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .main {
@@ -38,6 +38,7 @@ body {
     justify-content: center;
     margin-top: 0 !important; /* !important força alterações mesmo que alterem predefinições bootstrap */
     margin-bottom: 0 !important;
+    cursor: pointer;
 }
 
 .main-products > .products-title {
@@ -92,6 +93,12 @@ body {
     margin-bottom: 0.5rem;
     border-radius: 0 !important;
     align-self: flex-start;
+}
+
+.products__cards-container .card-body > a:hover{
+    color: var(--color-cinza);
+    transition: 0.1s ease-in-out;
+    ;
 }
 
 @media(max-width: 923px) {
