@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Footer one */
@@ -26,7 +26,9 @@ body {
   flex-wrap: wrap;
 }
 
-.card-1, .card-2, .card-3 {
+.card-1,
+.card-2,
+.card-3 {
   display: flex;
   align-items: center;
   gap: 1.25rem;
@@ -62,7 +64,7 @@ body {
   justify-content: center;
 }
 
-#footer_Two > div {
+#footer_Two>div {
   border: 1px solid var(--color-preta);
   padding: 1.875rem;
   width: 500px;
@@ -132,7 +134,9 @@ body {
     gap: 1.5rem;
   }
 
-  .card-1, .card-2, .card-3 {
+  .card-1,
+  .card-2,
+  .card-3 {
     max-width: 100%;
     width: 20rem;
     gap: 1rem;
@@ -140,7 +144,8 @@ body {
 
   .img-footer {
     width: 3.5rem;
-    flex-shrink: 0; /* Impede o texto de esmagar as imagens */
+    flex-shrink: 0;
+    /* Impede o texto de esmagar as imagens */
   }
 }
 
@@ -149,7 +154,9 @@ body {
     padding: 1.8rem 0.8rem;
   }
 
-  .card-1, .card-2, .card-3 {
+  .card-1,
+  .card-2,
+  .card-3 {
     max-width: 100%;
     width: 18rem;
   }
@@ -168,23 +175,24 @@ body {
     padding: 2rem 1rem;
   }
 
-  #footer_Two > div {
+  #footer_Two>div {
     padding: 1.2rem 1rem;
   }
 
   #footer_Two h3 {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     margin-bottom: 1rem;
     line-height: 1.4;
   }
 
   /* Força campo e-mail e botão a agirem como bloco único e flexível */
-  #footer_Two form { 
+  #footer_Two form {
     display: flex !important;
     width: 100%;
     justify-content: center;
-    align-items: stretch; /* Iguala a altura do input e o botão */
-    margin: 0 auto;  
+    align-items: stretch;
+    /* Iguala a altura do input e o botão */
+    margin: 0 auto;
     max-width: 100%;
   }
 
@@ -208,7 +216,8 @@ body {
     border: 2px solid var(--color-preta);
     font-size: 0.7rem;
     cursor: pointer;
-    flex-shrink: 0;/* Evita que botão esmague o texto interno*/
+    flex-shrink: 0;
+    /* Evita que botão esmague o texto interno*/
   }
 
   #footer_Three {
@@ -218,4 +227,4 @@ body {
   #footer_Three h3 {
     font-size: 0.65rem;
   }
-}  
+}
