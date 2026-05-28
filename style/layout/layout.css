@@ -16,3 +16,8 @@ body {
   background-color: var(--color-branca);
   font-family: "Inter", sans-serif;
 }
+
+html, body {
+  overflow-x: hidden; /* Evita que cantos transbordem ao alterar responsividade */
+  width: 100%;
+}
