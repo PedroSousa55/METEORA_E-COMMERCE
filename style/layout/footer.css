@@ -1,5 +1,5 @@
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Footer one */
@@ -64,7 +64,7 @@ body {
   justify-content: center;
 }
 
-#footer_Two>div {
+#footer_Two > div {
   border: 1px solid var(--color-preta);
   padding: 1.875rem;
   width: 500px;
@@ -151,7 +151,7 @@ body {
 
   .img-footer {
     width: 3.5rem;
-    flex-shrink: 0;/* Impede o texto de esmagar as imagens */
+    flex-shrink: 0; /* Impede o texto de esmagar as imagens */
   }
 }
 
@@ -181,7 +181,7 @@ body {
     padding: 2rem 1rem;
   }
 
-  #footer_Two>div {
+  #footer_Two > div {
     padding: 1.2rem 1rem;
   }
 
