@@ -104,6 +104,13 @@ body {
   color: var(--color-branca);
   font-size: 0.875rem;
   cursor: pointer;
+
+  transition: all 0.1s ease-in-out;
+}
+
+#input_button_send:hover,
+#input_button_send:focus {
+  color: var(--color-cinza) !important;
 }
 
 /* FOOTER FINAL */

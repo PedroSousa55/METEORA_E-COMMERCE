@@ -83,14 +83,66 @@ header form .btn:hover {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
-  header .navbar {
-    padding: 1rem;
+@media (max-width: 892px) {
+.navbar-expand-custom .navbar-collapse {
+    display: none !important;
   }
+  
+  .navbar-expand-custom .navbar-toggler {
+    display: block !important;
+  }
+
+  .navbar-expand-custom .navbar-collapse.show {
+    display: block !important;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+  
   .navbar-nav .nav-link {
-    margin: 5px 0;
+    margin: 0.313rem 0;
   }
+  
   header form {
-    margin-top: 15px;
+    margin-top: 0.94rem;
+    width: 100%;
+  }
+  
+  header form input {
+    flex-grow: 1;
+  }
+}
+
+/* Quando a tela for maior que 892px: Alinha tudo lado a lado */
+@media (min-width: 893px) {
+  .navbar-expand-custom {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  
+  .navbar-expand-custom .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row !important;
+  }
+
+  .navbar-expand-custom .navbar-nav .nav-item {
+    margin-right: 0.94rem;
+  }
+  
+  .navbar-expand-custom .navbar-toggler {
+    display: none !important; 
+  }
+
+  header form {
+    margin-top: 0 !important;
+    width: auto; 
   }
 }
