@@ -104,7 +104,14 @@ body {
   color: var(--color-branca);
   font-size: 0.875rem;
   cursor: pointer;
+
+  transition: all 0.1s ease-in-out;
 }
+
+#input_button_send:hover,
+#input_button_send:focus {
+  color: var(--color-cinza) !important;
+} /* Pseudo-classe :focus aplica efeito após foco no botão com mouse ou teclado */
 
 /* FOOTER FINAL */
 
@@ -144,8 +151,7 @@ body {
 
   .img-footer {
     width: 3.5rem;
-    flex-shrink: 0;
-    /* Impede o texto de esmagar as imagens */
+    flex-shrink: 0;/* Impede o texto de esmagar as imagens */
   }
 }
 
