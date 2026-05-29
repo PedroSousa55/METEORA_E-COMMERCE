@@ -110,20 +110,21 @@ header form .btn:hover {
   }
   
   header form input {
-    flex-grow: 1;
+    flex-grow: 1; /* Define capacidade de ocupar espaço livre */
   }
 }
 
 /* Quando a tela for maior que 892px: Alinha tudo lado a lado */
 @media (min-width: 893px) {
   .navbar-expand-custom {
-    flex-flow: row nowrap;
+    flex-flow: row nowrap; /* Determina direção e comportamento do container */
+    /* Flex-flow é constituida pelas propriedades flex-wrap e flex-direction */
     justify-content: flex-start;
   }
   
   .navbar-expand-custom .navbar-collapse {
     display: flex !important;
-    flex-basis: auto;
+    flex-basis: auto; /* Determina comprimento base de item flexível */
     flex-direction: row !important;
     justify-content: space-between;
     width: 100%;
