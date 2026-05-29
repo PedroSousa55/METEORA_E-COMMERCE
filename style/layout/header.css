@@ -1,5 +1,5 @@
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Customização do Header/Navbar */
@@ -19,7 +19,13 @@ header .navbar {
   transform: scale(1.05);
 }
 
-.navbar-nav .nav-link {
+.navbar-nav .nav-link.dropdown-toggle::after {
+  border: none !important;
+  vertical-align: unset !important;
+  margin-left: 0 !important;
+}
+
+.navbar-nav > .nav-item > .nav-link {
   color: var(--color-branca) !important;
   font-weight: 500;
   margin: 0 10px;
@@ -27,8 +33,8 @@ header .navbar {
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link::after {
-  content: '';
+.navbar-nav > .nav-item > .nav-link::after {
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -38,12 +44,12 @@ header .navbar {
   transition: width 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-  width: 100%;
+.navbar-nav > .nav-item > .nav-link:hover::after,
+.navbar-nav > .nav-item > .nav-link.active::after {
+  width: 100% !important;
 }
 
-.navbar-nav .nav-link:hover {
+.navbar-nav > .nav-item > .nav-link:hover {
   color: var(--color-verde) !important;
 }
 
@@ -84,10 +90,10 @@ header form .btn:hover {
 
 /* Responsivo */
 @media (max-width: 892px) {
-.navbar-expand-custom .navbar-collapse {
+  .navbar-expand-custom .navbar-collapse {
     display: none !important;
   }
-  
+
   .navbar-expand-custom .navbar-toggler {
     display: block !important;
   }
@@ -99,16 +105,16 @@ header form .btn:hover {
   .navbar-nav {
     flex-direction: column;
   }
-  
+
   .navbar-nav .nav-link {
     margin: 0.313rem 0;
   }
-  
+
   header form {
     margin-top: 0.94rem;
     width: 100%;
   }
-  
+
   header form input {
     flex-grow: 1; /* Define capacidade de ocupar espaço livre */
   }
@@ -121,7 +127,7 @@ header form .btn:hover {
     /* Flex-flow é constituida pelas propriedades flex-wrap e flex-direction */
     justify-content: flex-start;
   }
-  
+
   .navbar-expand-custom .navbar-collapse {
     display: flex !important;
     flex-basis: auto; /* Determina comprimento base de item flexível */
@@ -129,7 +135,7 @@ header form .btn:hover {
     justify-content: space-between;
     width: 100%;
   }
-  
+
   .navbar-expand-custom .navbar-nav {
     flex-direction: row !important;
   }
@@ -137,13 +143,13 @@ header form .btn:hover {
   .navbar-expand-custom .navbar-nav .nav-item {
     margin-right: 0.94rem;
   }
-  
+
   .navbar-expand-custom .navbar-toggler {
-    display: none !important; 
+    display: none !important;
   }
 
   header form {
     margin-top: 0 !important;
-    width: auto; 
+    width: auto;
   }
 }

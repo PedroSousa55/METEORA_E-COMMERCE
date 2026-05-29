@@ -1,0 +1,195 @@
+.modal-icon-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2.5px solid var(--color-verde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-titulo {
+  font-size: 0.938rem;
+  font-weight: 500;
+  color: var(--color-branca);
+}
+
+.modal-img-wrap {
+  width: 42%;
+  background: #f2f2f2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-produto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-detalhes {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-nome {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-preta);
+  margin-bottom: 0.4rem;
+}
+
+.modal-descricao {
+  font-size: 0.813rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.modal-divisor {
+  border-color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.modal-preco {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-preta);
+  margin-bottom: 0.25rem;
+}
+
+.modal-vendedor {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
+.modal-secao {
+  margin-bottom: 1rem;
+}
+
+.modal-label {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: var(--color-preta);
+  margin-bottom: 0.5rem;
+}
+
+/* CORES */
+.modal-cores {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.modal-cor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.modal-cor-item input[type="radio"] {
+  display: none;
+}
+
+.cor-circulo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+  border: 1.5px solid transparent;
+  transition: border 0.2s;
+}
+
+.modal-cor-item input[type="radio"]:checked + .cor-circulo {
+  border: 2.5px solid var(--color-roxo);
+  outline: 2px solid var(--color-roxo);
+  outline-offset: 2px;
+}
+
+.cor-nome {
+  font-size: 0.7rem;
+  color: #444;
+}
+
+/* TAMANHOS */
+.modal-tamanhos {
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-tam-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.modal-tam-item input[type="radio"] {
+  display: none;
+}
+
+.tam-circulo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: block;
+  background: #fff;
+  border: 1.5px solid #ccc;
+  transition: all 0.2s;
+}
+
+.modal-tam-item input[type="radio"]:checked + .tam-circulo {
+  background: var(--color-roxo);
+  border-color: var(--color-roxo);
+}
+
+.tam-nome {
+  font-size: 0.7rem;
+  color: #444;
+}
+
+/* BOTÃO */
+.btn-sacola {
+  background: var(--color-roxo);
+  color: var(--color-branca);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  margin-top: auto;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.1s ease-in-out;
+}
+
+.btn-sacola:hover {
+  color: var(--color-cinza);
+}
+
+/* MODAL EMAIL */
+.modal-email-texto {
+  font-size: 0.875rem;
+  color: #444;
+  margin: 0;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .modal-body.p-0.d-flex {
+    flex-direction: column;
+  }
+  .modal-img-wrap {
+    width: 100%;
+    height: 220px;
+  }
+}
