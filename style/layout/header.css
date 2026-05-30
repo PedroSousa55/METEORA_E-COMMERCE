@@ -1,7 +1,3 @@
-body {
-  font-family: "Inter", sans-serif;
-}
-
 /* Customização do Header/Navbar */
 header .navbar {
   background-color: var(--color-preta) !important;
