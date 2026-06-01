@@ -2,7 +2,7 @@
     margin-top: 2.2rem;
 }
  
-\\ Customização do 
+ /* Estilização do main-category */
 .main-category > .category-title {
     display: flex;
     justify-content: center;
@@ -38,6 +38,7 @@
     cursor: pointer;
 }
 
+ /* Estilização do main-products */
 .main-products > .products-title {
     display: flex;
     justify-content: center;
@@ -76,6 +77,26 @@
     margin-bottom: 1.5rem !important;
     font-size: 0.7rem;
     font-weight: 600;
+}
+
+.products__cards-container .card-body > .card-title:last-of-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+/* Estilização do preço com desconto */
+.preco-desconto {
+    font-weight: 700;
+}
+
+/* Estilização do preço antigo (Riscado) */
+.preco-antigo {
+    font-size: 0.85rem;
+    color: #858585;
+    text-decoration: line-through;
+    font-weight: 400;
 }
 
 /* Alteração do último h5 com a pseudoclasse :last-of-type */

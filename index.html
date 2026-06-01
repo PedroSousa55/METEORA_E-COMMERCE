@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -15,6 +15,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
     defer></script>
   <script src="script/modal.js" defer></script>
+  <script src="script/main.js" defer></script>
 </head>
 
 <body>
@@ -62,6 +63,10 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#footer_Two">Promoções</a>
+            </li>
+            <li class="nav-item nav-bag">
+              <a class="nav-link" href="sobre.html"><img src="assets/Desktop/Ícones/bag.png"
+                  alt="sacola de compras"></a>
             </li>
           </ul>
 
@@ -292,7 +297,7 @@
           primeira compra? Cadastre-se!
         </h3>
         <form id="form-newsletter">
-          <input id="input_value_email" placeholder="Digite seu email" type="email" required />
+          <input id="input_value_email" placeholder="Digite seu email" type="email" autocomplete="off" required />
           <button id="input_button_send" type="submit">Enviar</button>
         </form>
       </div>
@@ -442,8 +447,33 @@
                 </label>
               </div>
             </div>
-            <button class="btn-sacola">Adicionar à sacola</button>
+            <button type="button" class="btn-sacola">Adicionar à sacola</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalSacola" tabindex="-1" aria-labelledby="modalSacolaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-0 border-0">
+        <div class="modal-header bg-black text-white border-0 py-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="modal-icon-check">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8l3.5 3.5L13 5" stroke="#daff01" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <span id="modalSacolaLabel" class="modal-titulo">Produto adicionado à sacola!</span>
+          </div>
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
+            aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-email-texto">
+            Item guardado na sacola com sucesso.
+          </p>
         </div>
       </div>
     </div>
@@ -469,6 +499,33 @@
         <div class="modal-body">
           <p class="modal-email-texto">
             Em breve você receberá novidades exclusivas da Meteora.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modalEmailReused" tabindex="-1" aria-labelledby="modalEmailReusedLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-0 border-0">
+        <div class="modal-header bg-black text-white border-0 py-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="modal-icon-check">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0-11v4m0 3h.01" stroke="#daff01" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <span id="modalEmailReusedLabel" class="modal-titulo">Aviso: Desconto já ativo!</span>
+          </div>
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
+            aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-email-texto">
+            Este e-mail já foi cadastrado anteriormente nesta sessão e o desconto de 10% já está aplicado nos produtos
+            do catálogo.
           </p>
         </div>
       </div>
