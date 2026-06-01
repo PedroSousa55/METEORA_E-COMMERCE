@@ -1,0 +1,236 @@
+/* Estilização do main-bag */
+.bag-container {
+    max-width: 56.25rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.bag-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.2rem;
+    font-size: 1.5rem;
+    color: var(--color-preta);
+}
+
+.bag__empty-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 2.7rem;
+    color: var(--color-cinza2);
+    font-size: 1.125rem;
+}
+
+/* Estilização de cada card de produto do js */
+.card-bag {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 0.5rem solid var(--color-verde);
+}
+
+.left-bloco {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    margin-right: 1.25rem;
+}
+
+.check-produto {
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+    accent-color: var(--color-cinza2);
+}
+
+.container-img-produto {
+    width: 5.625rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-produto-sacola {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.bloco-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+}
+
+.nome-produto {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: normal;
+}
+
+.variacao-prd {
+    font-size: 0.875rem;
+    color: var(--color-preta);
+    margin: 0;
+}
+
+/* Estilização do bloco de valores no js */
+.bloco-valores {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.coluna-preco,
+.coluna-qtd {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.label-titulo {
+    font-size: 1rem;
+    color: var(--color-preta);
+}
+
+.valor-produto {
+    font-size: 1rem;
+}
+
+.input-qtd {
+    width: 3.125rem;
+    height: 2.5rem;
+    background-color: var(--color-cinza1);
+    border: 0.125rem solid var(--color-verde);
+    border-radius: 0.75rem;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.btn-apagar {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1.5625rem;
+    padding: 0;
+}
+
+.img-lixeira {
+    width: 1.125rem;
+    height: 1.25rem;
+}
+
+
+/* Estilização da bag na página html */
+.bag-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5625rem;
+    margin-top: 1.875rem;
+    width: 100%;
+}
+
+/* Opções de Rádio (Pagamento) */
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    margin-bottom: 0.3125rem;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: var(--color-verde);
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Estilização do Resultado Final */
+.final-result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.9375rem;
+    width: 100%;
+    max-width: 25rem;
+}
+
+.result-container {
+    font-size: 1.125rem;
+}
+
+.result-container strong {
+    margin-right: 0.9375rem;
+}
+
+#valor-total {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.btn-finalizar {
+    background-color: var(--color-roxo);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.btn-finalizar:hover {
+    background-color: var(--color-preta);
+}
+
+@media (max-width: 786px) {
+    .card-bag {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.25rem 0;
+    }
+
+    .left-bloco {
+        margin-right: 0;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .bloco-info {
+        width: 100%;
+    }
+
+    .bloco-valores {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .btn-apagar {
+        margin-top: 0;
+        align-self: center;
+    }
+
+    .bag-footer {
+        align-items: center;
+    }
+
+    .final-result {
+        align-items: center;
+    }
+
+    .btn-finalizar {
+        width: 100%;
+        text-align: center;
+    }
+}

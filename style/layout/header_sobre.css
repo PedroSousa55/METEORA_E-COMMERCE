@@ -1,35 +1,35 @@
 /* Customização do Header/Navbar */
 header .navbar {
-  background-color: var(--color-preta) !important;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--color-preta) !important;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand img {
-  height: 35px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+    height: 35px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .navbar-brand:hover img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-.navbar-nav .nav-link.dropdown-toggle::after {
-  border: none !important;
-  vertical-align: unset !important;
-  margin-left: 0 !important;
+.navbar-nav::after {
+    border: none !important;
+    vertical-align: unset !important;
+    margin-left: 0 !important;
 }
 
-.navbar-nav>.nav-item>.nav-link {
+.navbar-nav > .nav-item > .nav-link {
   color: var(--color-branca) !important;
   font-weight: 500;
-  margin: 0 0.625rem;
+  margin: 0 10px;
   position: relative;
   transition: color 0.3s ease;
 }
 
-.navbar-nav>.nav-item>.nav-link::after {
+.navbar-nav > .nav-item > .nav-link::after {
   content: "";
   position: absolute;
   width: 0;
@@ -40,49 +40,47 @@ header .navbar {
   transition: width 0.3s ease;
 }
 
-.navbar-nav>.nav-item>.nav-link:hover::after,
-.navbar-nav>.nav-item>.nav-link.active::after {
+.navbar-nav > .nav-item > .nav-link:hover::after,
+.navbar-nav > .nav-item > .nav-link.active::after {
   width: 100% !important;
 }
 
-.navbar-nav>.nav-item>.nav-link:hover {
+.navbar-nav > .nav-item > .nav-link:hover {
   color: var(--color-verde) !important;
 }
 
-
-/* Estilo do Input de Busca */
 header form input[type="search"] {
-  background-color: transparent;
-  border: 1px solid var(--color-branca);
-  color: var(--color-branca);
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
+    background-color: transparent;
+    border: 1px solid var(--color-branca);
+    color: var(--color-branca);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 }
 
 header form input[type="search"]::placeholder {
-  color: var(--color-cinza);
+    color: var(--color-branca);
 }
 
 header form input[type="search"]:focus {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: var(--color-verde);
-  box-shadow: none;
-  outline: none;
-  color: var(--color-branca);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-verde);
+    box-shadow: none;
+    outline: none;
+    color: var(--color-branca);
 }
 
 /* Botão Buscar */
 header form .btn {
-  border: 1px solid var(--color-branca);
-  color: var(--color-branca);
-  font-weight: 500;
-  padding: 0.5rem 1.5rem;
-  transition: all 0.3s ease;
+    border: 1px solid var(--color-branca);
+    color: var(--color-branca);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
 }
 
 header form .btn:hover {
-  background-color: var(--color-branca);
-  color: var(--color-preta);
+    background-color: var(--color-branca);
+    color: var(--color-preta);
 }
 
 /* Responsivo */
@@ -108,7 +106,7 @@ header form .btn:hover {
     margin: 0.313rem 0;
   }
 
-  .navbar-nav>.nav-item>.nav-link {
+   .navbar-nav>.nav-item>.nav-link {
     display: inline-block;
     width: fit-content;
     padding-left: 0;
@@ -120,16 +118,7 @@ header form .btn:hover {
   .navbar-nav>.nav-item>.nav-link.active::after {
     width: 100% !important;
   }
-
-  .navbar-nav > .nav-item > .nav-link:has(img) {
-    left: 0;
-    transform: none;
-  }
-  .navbar-nav > .nav-item > .nav-link:has(img):hover::after,
-  .navbar-nav > .nav-item > .nav-link:has(img).active::after {
-    width: 1.5rem !important;
-  }
-
+  
   header form {
     margin-top: 0.94rem;
     width: 100%;
@@ -170,34 +159,5 @@ header form .btn:hover {
   .navbar-expand-custom .navbar-toggler {
     display: none !important;
   }
-
-  .navbar-nav>.nav-item:last-child {
-    margin-left: auto;
-  }
-
-  .navbar-nav>.nav-item>.nav-link:has(img)::after {
-    left: 50%;
-    transform: translateX(-50%);/* Centraliza no início da linha */
-  } 
-
-  .navbar-nav>.nav-item>.nav-link:has(img):hover::after,
-  .navbar-nav>.nav-item>.nav-link:has(img).active::after {
-    width: 24px !important;
-  }
-
-  .navbar-nav.me-auto {
-    margin-right: 0 !important; 
-    flex-grow: 1; /* Faz a lista ocupar o espaço disponível */
-  }
-
-  /* 2. Empurra especificamente o item da sacola para o fim da lista */
-  .navbar-nav > .nav-item:last-child {
-    margin-left: auto !important;
-  }
-
-  header form {
-    margin-top: 0 !important;
-    width: auto;
-  }
+  
 }
-
