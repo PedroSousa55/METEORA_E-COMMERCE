@@ -60,17 +60,31 @@
                     <form class="bag-footer" style="display: none;">
 
                         <div class="mb-3">
-                            <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" id="cpf" class="form-control input-cpf" required minlength="11"
-                                maxlength="11" pattern="^(?!(\d)\1{10})\d{11}$"
-                                placeholder="Digite apenas os 11 números">
+                            <label class="label-pay">Forma de Pagamento:</label>
+                            <div>
+                                <input type="radio" name="pagamento" id="credito" class="input"> <label
+                                    for="credito">Crédito</label>
+                                <input type="radio" name="pagamento" id="debito" class="input"> <label
+                                    for="debito">Débito</label>
+                                <input type="radio" name="pagamento" id="pix" class="input"> <label
+                                    for="pix">Pix</label>
+                            </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="cep" class="form-label">CEP</label>
-                            <input type="text" id="cep" class="form-control input-cep" required minlength="8"
-                                maxlength="8" pattern="^(?!(\d)\1{7})\d{8}$" placeholder="Digite apenas os 8 números">
+                            <label for="cpf" class="form__label-cpf">CPF</label>
+                            <input type="password" id="cpf" class="form-control input-cpf" required minlength="11"
+                                maxlength="11" pattern="^(?!(\d)\1{10})\d{11}$"
+                                placeholder="Digite apenas os 11 números" autocomplete="off">
                         </div>
+
+                        <div class="mb-3">
+                            <label for="cep" class="form__label-cep">CEP</label>
+                            <input type="text" id="cep" class="form-control input-cep" required minlength="8"
+                                maxlength="8" pattern="^(?!(\d)\1{7})\d{8}$" placeholder="Digite apenas os 8 números"
+                                autocomplete="off">
+                        </div>
+
 
                         <div class="final-result">
                             <div class="total-container">
@@ -94,26 +108,26 @@
         </div>
     </footer>
 
-    <modal>
-        <div class="modal fade" id="modalSucessoCompra" tabindex="-1" aria-labelledby="modalSucessoCompraLabel"
+    <section>
+        <div class="modal fade" id="modalCheckout" tabindex="-1" aria-labelledby="modalCheckoutLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content rounded-0 border-0">
-                    <div class="modal-header bg-black text-white border-0 py-3">
+                    <div id="modalHeaderBg" class="modal-header bg-black text-white border-0 py-3">
                         <div class="d-flex align-items-center gap-2">
-                            <div class="modal-icon-check">
+                            <div id="modalIconeContainer" class="modal-icon-check">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8l3.5 3.5L13 5" stroke="#daff01" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            <span id="modalSucessoCompraLabel" class="modal-titulo">Pedido realizado com sucesso!</span>
+                            <span id="modalCheckoutLabel" class="modal-titulo">Pedido realizado com sucesso!</span>
                         </div>
                         <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
                             aria-label="Fechar"></button>
                     </div>
                     <div class="modal-body">
-                        <p class="modal-email-texto">
+                        <p id="modalCheckoutTexto" class="modal-email-texto">
                             Obrigado por comprar na Meteora! O resumo e o código de rastreio serão enviados para o seu
                             e-mail.
                         </p>
@@ -121,5 +135,5 @@
                 </div>
             </div>
         </div>
-    </modal>
+    </section>
 </body>

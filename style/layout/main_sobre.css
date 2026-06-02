@@ -136,19 +136,36 @@
 }
 
 /* Opções de Rádio (Pagamento) */
-.radio-label {
+.bag-footer .mb-3 {
+    width: 100%;
+    max-width: 25rem;
     display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    cursor: pointer;
-    font-size: 0.9375rem;
-    margin-bottom: 0.3125rem;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.radio-label input[type="radio"] {
-    accent-color: var(--color-verde);
-    width: 1rem;
-    height: 1rem;
+.label-pay {
+    font: bold 1rem inherit;
+    color: var(--color-preta);
+}
+
+.label-pay + div {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.label-pay + div label {
+    color: var(--color-preta);
+    cursor: pointer;
+}
+
+.label-pay + div .input {
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+    accent-color: var(--color-roxo);
 }
 
 /* Estilização do Resultado Final */
