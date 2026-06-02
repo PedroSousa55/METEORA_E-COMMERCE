@@ -1,18 +1,21 @@
+// Busca de dados de itens HTML pelo método DOM
 const containerSacola = document.querySelector(".bag-content");
 const mensagemVazio = document.querySelector(".bag__empty-text");
 const formularioCheckout = document.querySelector(".bag-footer");
 const valorTotalElemento = document.getElementById("valor-total");
+
 // Busca dos dados armazenados no localStorage
 let listaProdutos = JSON.parse(localStorage.getItem("armazenamento")) || [];
 
 function renderizarSacola() {
   if (!containerSacola) return;
-  
+
   document.querySelectorAll(".card-bag").forEach(card => card.remove());
 
   if (listaProdutos.length > 0) {
     if (mensagemVazio) mensagemVazio.style.display = "none";
     if (formularioCheckout) formularioCheckout.style.display = "flex";
+
     // Criação da estrutura de exibição de dados dos produtos selecionados após forEach percorrer e ler os dados
     listaProdutos.forEach((produto, index) => {
       const precoFormatado = Number(produto.preco).toLocaleString('pt-BR', {
@@ -53,6 +56,7 @@ function renderizarSacola() {
         </div>
       `;
 
+      // Posicionamento dos itens do acessados pelo localStorage no HTML
       containerSacola.insertAdjacentHTML('beforeend', cardHTML);
     });
     calcularTotalSacola();
@@ -65,6 +69,7 @@ function renderizarSacola() {
   }
 }
 
+// Pega a quantidade de itens adicionados para futuramente realizar evento de cálculo de total da Sacola
 if (containerSacola) {
   containerSacola.addEventListener("change", (e) => {
     if (e.target.classList.contains("check-produto") || e.target.classList.contains("input-qtd")) {
@@ -127,6 +132,8 @@ if (containerSacola) {
   }, true);
 }
 
+// Validação aprimorada dos inputs cpf e cep 
+// Evitará que sejam digitadas algumas teclas nos inputs, evita repetição de números além de dois dígitos, etc. 
 if (formularioCheckout) {
   const inputCPF = formularioCheckout.querySelector(".input-cpf");
   const inputCEP = formularioCheckout.querySelector(".input-cep");
@@ -142,7 +149,7 @@ if (formularioCheckout) {
 
     inputElement.addEventListener("keydown", (e) => {
       if (
-        e.key === "Backspace" || e.key === "Delete" || e.key === "Tab" || 
+        e.key === "Backspace" || e.key === "Delete" || e.key === "Tab" ||
         e.key === "Escape" || e.key === "Enter" || e.ctrlKey || e.metaKey ||
         e.key.startsWith("Arrow")
       ) {
@@ -186,16 +193,19 @@ if (formularioCheckout) {
   aplicarValidacaoRigida(inputCPF, 11);
   aplicarValidacaoRigida(inputCEP, 8);
 
+  // Evento de Clique para exibir término de compra
   formularioCheckout.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    if (!modalBootstrap) return;
+    if (!modalBootstrap || !modalElemento) return;
 
+    // Busca de
     const checkboxesProdutos = document.querySelectorAll(".check-produto");
+
     const radiosPagamento = document.querySelectorAll('input[name="pagamento"]');
+
     const inputCPFReal = formularioCheckout.querySelector(".input-cpf");
     const inputCEPReal = formularioCheckout.querySelector(".input-cep");
-    const inputEmailReal = formularioCheckout.querySelector(".input-email"); 
 
     const modalHeaderBg = document.getElementById("modalHeaderBg");
     const modalIconeContainer = document.getElementById("modalIconeContainer");
@@ -206,7 +216,7 @@ if (formularioCheckout) {
       if (modalHeaderBg) modalHeaderBg.className = "modal-header bg-danger text-white border-0 py-3";
       if (modalTitulo) modalTitulo.textContent = "Ops! Algo deu errado";
       if (modalTexto) modalTexto.textContent = mensagem;
-      
+
       if (modalIconeContainer) {
         modalIconeContainer.innerHTML = `
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -215,7 +225,7 @@ if (formularioCheckout) {
           </svg>
         `;
       }
-      
+
       modalBootstrap.show();
 
       if (campo) {
@@ -225,37 +235,28 @@ if (formularioCheckout) {
       }
     };
 
+    // Validação da seleção individual de produtos
     const algumProdutoSelecionado = Array.from(checkboxesProdutos).some(cb => cb.checked);
     if (!algumProdutoSelecionado) {
       exibirModalErro("Por favor, selecione ao menos um produto na sacola para prosseguir.", null);
       return;
     }
 
-    if (inputEmailReal) {
-      const emailValor = inputEmailReal.value.trim();
-      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (emailValor === "") {
-        exibirModalErro("O campo de e-mail não pode ficar vazio.", inputEmailReal);
-        return;
-      } else if (!regexEmail.test(emailValor)) {
-        exibirModalErro("Por favor, insira um endereço de e-mail válido (ex: nome@email.com).", inputEmailReal);
-        return;
-      }
-    }
-
+    // Validação do CPF com uso do método regex
     const cpfLimpo = inputCPFReal ? inputCPFReal.value.replace(/\D/g, "") : "";
     if (cpfLimpo.length !== 11 || cpfLimpo.split("").every(d => d === cpfLimpo[0])) {
-      exibirModalErro("O CPF informado está incompleto ou inválido. Digite os 11 números.", inputCPFReal);
+      exibirModalErro("O CPF informado está incompleto ou inválido.", inputCPFReal);
       return;
     }
 
+    // Validação do CEP com uso de método regex
     const cepLimpo = inputCEPReal ? inputCEPReal.value.replace(/\D/g, "") : "";
     if (cepLimpo.length !== 8 || cepLimpo.split("").every(d => d === cepLimpo[0])) {
-      exibirModalErro("O CEP informado está incompleto ou inválido. Digite os 8 números.", inputCEPReal);
+      exibirModalErro("O CEP informado está incompleto ou inválido.", inputCEPReal);
       return;
     }
 
+    // Validação do input radio de pagamento
     if (radiosPagamento.length > 0) {
       const pagamentoSelecionado = Array.from(radiosPagamento).some(radio => radio.checked);
       if (!pagamentoSelecionado) {
@@ -264,21 +265,16 @@ if (formularioCheckout) {
       }
     }
 
-    const novasMarcacoes = [];
-    document.querySelectorAll(".card-bag").forEach(card => {
-      const indexOriginal = parseInt(card.getAttribute("data-index"));
-      const cb = card.querySelector(".check-produto");
-      if (cb && !cb.checked) {
-        novasMarcacoes.push(listaProdutos[indexOriginal]);
-      }
-    });
+    // Retrabalho de nova lista para localStorage
+    const produtosRestantes = listaProdutos.filter((produto) => produto.selecionado === false);
 
-    listaProdutos = novasMarcacoes;
+    // Atualiza a variável global e o localStorage
+    listaProdutos = produtosRestantes;
     localStorage.setItem("armazenamento", JSON.stringify(listaProdutos));
 
     if (modalHeaderBg) modalHeaderBg.className = "modal-header bg-black text-white border-0 py-3";
     if (modalTitulo) modalTitulo.textContent = "Pedido realizado com sucesso!";
-    if (modalTexto) modalTexto.textContent = "Obrigado por comprar na Meteora! O resumo e o código de rastreio serão enviados para o seu e-mail.";
+    if (modalTexto) modalTexto.textContent = "Obrigado por comprar na Meteora! O resumo foi enviado para o seu e-mail.";
     if (modalIconeContainer) {
       modalIconeContainer.innerHTML = `
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -289,8 +285,9 @@ if (formularioCheckout) {
 
     modalBootstrap.show();
 
+    // Renderiza sacola
     modalElemento.addEventListener("hidden.bs.modal", () => {
-      window.location.reload();
+      renderizarSacola();
     }, { once: true });
   });
 }
@@ -299,6 +296,7 @@ if (formularioCheckout) {
 function calcularTotalSacola() {
   const cards = document.querySelectorAll(".card-bag");
   let valorTotalGeral = 0;
+
   cards.forEach(card => {
     const checkbox = card.querySelector(".check-produto");
     const inputQuantidade = card.querySelector(".input-qtd");
@@ -309,6 +307,7 @@ function calcularTotalSacola() {
       valorTotalGeral += precoUnitario * quantidade;
     }
   });
+
   if (valorTotalElemento) {
     valorTotalElemento.textContent = valorTotalGeral.toLocaleString('pt-BR', {
       style: 'currency',
